@@ -1,0 +1,53 @@
+.Header {
+    height: 5vw;
+    background: #2d2525;
+    color: azure;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.Header a {
+    text-decoration: none;
+    font-size: 3vw;
+    font-weight: bold;
+    color: azure;
+}
+
+.Header a[class='active'] {
+    color: #b4e1d8;
+}
+
+.HeaderNav {
+    display: flex;
+    width: 85%;
+    justify-content: space-evenly;
+}
+
+.HeaderUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeaderUserName {
+    border-radius: 50%;
+    background: #b4e1d8;
+    height: 3vw;
+    width: 3vw;
+    color: #2d2525;
+    font-size: 2vw;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vw;
+}
+
+.HeaderUserLogout {
+    font-size: 1vw;
+    cursor: pointer;
+    margin-right: 1vw;
+}

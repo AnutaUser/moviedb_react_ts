@@ -1,0 +1,38 @@
+.Movies{
+
+}
+.CarsComponent {
+    width: 80vw;
+    text-align: center;
+}
+
+.CarsComponentButton {
+    background: none;
+    border: none;
+    height: 3.2vw;
+    width: 3.2vw;
+    margin: .5vw;
+}
+
+.icon {
+    color: chartreuse;
+    background: gray;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.icon:hover {
+    color: gray;
+    background: chartreuse;
+    transition: .8s;
+}
+
+.Cars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 2vw;
+    margin-top: 1.5vw;
+}

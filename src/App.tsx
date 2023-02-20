@@ -1,11 +1,20 @@
 import React, {FC} from "react";
+import {Route, Routes} from "react-router-dom";
 
-const App:FC = () => {
+import {MainLayout} from "./layouts";
+import {HomePage, MovieDetailsPage, MoviesPage, NotFoundPage} from "./pages";
+
+const App: FC = () => {
 
     return (
-        <div>
-            App:FC
-        </div>
+        <Routes>
+            <Route path={'/'} element={<MainLayout/>}>
+                <Route index element={<HomePage/>}/>
+                <Route path={'/movie'} element={<MoviesPage/>}/>
+                <Route path={'/movie/:id'} element={<MovieDetailsPage/>}/>
+                <Route path={'*'} element={<NotFoundPage/>}/>
+            </Route>
+        </Routes>
     );
 };
 
