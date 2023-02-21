@@ -1,0 +1,19 @@
+.Genres {
+    width: 20%;
+    background: #2A2D34;
+    color: azure;
+    text-align: center;
+    margin-right: 2%;
+    box-sizing: border-box;
+}
+
+.Genres button {
+    background: #202328;
+    color: azure;
+    align-items: center;
+    border: none;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 3%;
+}

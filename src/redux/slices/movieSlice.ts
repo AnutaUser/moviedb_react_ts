@@ -21,7 +21,6 @@ const getALL = createAsyncThunk<{ page: number, results: IMovie[], total_pages: 
     async ({page}, {rejectWithValue}) => {
         try {
             const {data} = await movieService.getAll(page);
-            console.log(data)
             return data;
         } catch (e) {
             const error = e as AxiosError;

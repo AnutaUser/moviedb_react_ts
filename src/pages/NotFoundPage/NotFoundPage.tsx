@@ -1,10 +1,12 @@
 import React, {FC} from "react";
 
+import css from './NotFoundPage.module.css';
+
 const NotFoundPage:FC = () => {
 
     return (
-        <div>
-            NotFoundPege:FC
+        <div className={css.NotFoundPage}>
+NotFoundPage
         </div>
     );
 };

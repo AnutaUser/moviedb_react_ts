@@ -1,1 +1,7 @@
-.NotFoundPage{}
+.NotFoundPage {
+    background-image: url('../../components/backgroundImages/notFound.jpg');
+    width: 100vw;
+    height: 34vw;
+    background-position: center;
+    background-size: 100% 100%;
+}

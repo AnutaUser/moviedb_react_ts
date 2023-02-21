@@ -1,6 +1,17 @@
 .Footer{
     min-height: 10vw;
-    width: 100vw;
-    background: #2d2525;
+    width: 100%;
+    background: #2A2D34;
     color: azure;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.Footer svg {
+    font-size: 2vw;
+    margin-right: 1vw;
+}
+.Footer a {
+    color: #FFDB4C;
 }

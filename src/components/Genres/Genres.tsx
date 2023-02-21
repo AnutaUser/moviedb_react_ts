@@ -1,4 +1,6 @@
 import React, {FC, useEffect} from "react";
+
+import css from "./Genrese.module.css";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genreActions} from "../../redux";
 import {Genre} from "../Genre/Genre";
@@ -10,11 +12,10 @@ const Genres:FC = () => {
     useEffect(() => {
         dispatch(genreActions.getAll());
     }, [dispatch]);
-    console.log(genres);
 
     return (
-        <div>
-            <h1>Genres</h1>
+        <div className={css.Genres}>
+            <h2>Genres</h2>
             {
                 !!genres &&
                 genres.map(genre => <Genre key={genre.id} genre={genre}/>)

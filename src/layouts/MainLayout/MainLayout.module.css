@@ -1,5 +1,14 @@
-.MainLayout{
-
+.MainLayout {
+    background-image: url("../../components/backgroundImages/bg.jpg");
+    background-attachment: scroll;
+    background-repeat: repeat;
+    padding-top: 13%;
+    padding-left: 13%;
+    box-sizing: border-box;
 }
 
-
+.MainLayoutChildren {
+    width: 84%;
+    background: #202328;
+    box-shadow: 0 0 20px rgb(0 0 0 / 80%)
+}

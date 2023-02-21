@@ -4,13 +4,16 @@ import {Outlet} from "react-router-dom";
 import css from './MainLayout.module.css';
 import {Footer, Header} from "../../components";
 
-const MainLayout:FC = () => {
+const MainLayout: FC = () => {
 
     return (
         <div className={css.MainLayout}>
-            <Header/>
-            <Outlet/>
-            <Footer/>
+
+            <div className={css.MainLayoutChildren}>
+                <Header/>
+                <Outlet/>
+                <Footer/>
+            </div>
         </div>
     );
 };

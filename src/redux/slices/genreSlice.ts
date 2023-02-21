@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {AxiosError} from "axios";
 
 import {IGenre} from "../../interfaces";
-import {AxiosError} from "axios";
 import {genreService} from "../../api";
 
 interface IState {
@@ -17,8 +17,8 @@ const getAll = createAsyncThunk<{ genres: IGenre[] }, void>(
     async (_, {rejectWithValue}) => {
         try {
             const {data} = await genreService.getAll();
-            console.log(data);
-            return data
+            console.log(data)
+            return data;
         } catch (e) {
             const error = e as AxiosError;
             return rejectWithValue(error.response?.data);

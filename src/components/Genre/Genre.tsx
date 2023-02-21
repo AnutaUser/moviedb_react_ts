@@ -10,10 +10,13 @@ const Genre:FC<IProps> = ({genre}) => {
 
     const {id, name} = genre;
 
+    const showGenreMovies = (genreId: string) => {
+        console.log(genreId)
+    };
+
     return (
         <div>
-            Genre
-            {id} --{name}
+            <button onClick={() => showGenreMovies(id.toString())}>{name}</button>
         </div>
     );
 };

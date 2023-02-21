@@ -1,14 +1,17 @@
 import React, {FC} from "react";
 
-import {Movies} from "../../components";
-import {Genres} from "../../components";
+import css from './MoviesPage.module.css';
+import {Genres, Movies, MovieSearch} from "../../components";
 
 const MoviesPage: FC = () => {
 
     return (
-        <div>
+        <div className={css.MoviesPage}>
             <Genres/>
-            <Movies/>
+            <div>
+                <MovieSearch/>
+                <Movies/>
+            </div>
         </div>
     );
 };

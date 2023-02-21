@@ -1,6 +1,7 @@
 .Header {
     height: 5vw;
-    background: #2d2525;
+    width: 100%;
+    background: #2A2D34;
     color: azure;
     display: flex;
     justify-content: space-between;
@@ -17,7 +18,7 @@
 }
 
 .Header a[class='active'] {
-    color: #b4e1d8;
+    color: #ccc;
 }
 
 .HeaderNav {
@@ -34,10 +35,10 @@
 
 .HeaderUserName {
     border-radius: 50%;
-    background: #b4e1d8;
+    background: #FFDB4C;
     height: 3vw;
     width: 3vw;
-    color: #2d2525;
+    color: #2A2D34;
     font-size: 2vw;
     font-weight: bold;
     display: flex;
