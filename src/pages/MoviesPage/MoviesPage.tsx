@@ -8,7 +8,7 @@ const MoviesPage: FC = () => {
     return (
         <div className={css.MoviesPage}>
             <Genres/>
-            <div>
+            <div className={css.SearchMovies}>
                 <MovieSearch/>
                 <Movies/>
             </div>

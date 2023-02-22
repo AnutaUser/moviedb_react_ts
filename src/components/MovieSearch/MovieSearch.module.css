@@ -1,3 +1,25 @@
 .MovieSearch{
+    width: 100%;
+    background: #2A2D34;
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.MovieSearch input {
+    background: #202328;
+    color: azure;
+    border: none;
+    height: 3vw;
+    width: 40vw;
+}
+
+.MovieSearch button {
+    background: #202328;
+    color: azure;
+    border: none;
+    height: 3.2vw;
 
 }

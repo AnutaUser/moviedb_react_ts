@@ -1,3 +1,5 @@
+import * as url from "url";
+
 interface IMovie {
     adult: boolean;
     backdrop_path: string | null;

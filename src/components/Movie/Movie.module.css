@@ -1,1 +1,22 @@
-.Movie{}
+.Movie{
+    width: 23%;
+}
+
+.Movie button {
+    width: 100%;
+    background: #2A2D34;
+    color: azure;
+    border: none;
+    padding: 3%;
+}
+
+.MoviePoster {
+    width: 100%;
+}
+
+.MovieTitle {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

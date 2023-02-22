@@ -1,12 +1,15 @@
 .Movies{
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 2vw;
+    margin-top: 1.5vw;
 }
-.CarsComponent {
-    width: 80vw;
+.MoviesButton {
     text-align: center;
 }
 
-.CarsComponentButton {
+.MoviesButton button {
     background: none;
     border: none;
     height: 3.2vw;
@@ -15,24 +18,15 @@
 }
 
 .icon {
-    color: chartreuse;
-    background: gray;
+    color: azure;
+    background: #2A2D34;
     width: 3vw;
     height: 3vw;
-    border-radius: 50%;
     cursor: pointer;
 }
 
 .icon:hover {
-    color: gray;
-    background: chartreuse;
+    color: #202328;
+    background: azure;
     transition: .8s;
-}
-
-.Cars {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    row-gap: 2vw;
-    margin-top: 1.5vw;
 }
