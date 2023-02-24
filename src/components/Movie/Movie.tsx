@@ -1,4 +1,5 @@
 import React, {FC, ReactNode} from "react";
+import ReactStars from "react-stars";
 
 import css from "./Movie.module.css";
 import {IMovie} from "../../interfaces";
@@ -10,7 +11,7 @@ interface IProps {
 }
 
 const Movie: FC<IProps> = ({movie}) => {
-    const {id, original_title, poster_path} = movie;
+    const {id, original_title, poster_path, vote_average} = movie;
 
     const navigate = useNavigate();
 
@@ -22,7 +23,7 @@ const Movie: FC<IProps> = ({movie}) => {
                      className={css.MoviePoster}/>
 
                 <div>
-
+                    <ReactStars className={css.Stars} count={10} size={17} value={vote_average}/>
                 </div>
                 <h4 className={css.MovieTitle}>
                     {original_title.toUpperCase()}

@@ -1,11 +1,9 @@
-import * as url from "url";
-
 interface IMovie {
     adult: boolean;
     backdrop_path: string | null;
     belongs_to_collection: null | object;
     budget: number;
-    genres: IGenre[];
+    genre_ids: number[];
     homepage: string | null;
     id: number;
     imdb_id: string | null;

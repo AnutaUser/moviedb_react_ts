@@ -8,10 +8,10 @@ const Footer:FC = () => {
 
     return (
         <div className={css.Footer}>
-            <a href="https://www.facebook.com" target={"_blank"}><FontAwesomeIcon icon={faFacebook}/></a>
-            <a href="https://twitter.com" target={"_blank"}><FontAwesomeIcon icon={faTwitter}/></a>
-            <a href="https://telegram.com" target={"_blank"}><FontAwesomeIcon icon={faTelegram}/></a>
-            <a href="https://www.instagram.com" target={"_blank"}><FontAwesomeIcon icon={faInstagram}/></a>
+            <a href="https://www.facebook.com" target={"_blank"} rel={"noreferrer"}><FontAwesomeIcon icon={faFacebook}/></a>
+            <a href="https://twitter.com" target={"_blank"} rel={"noreferrer"}><FontAwesomeIcon icon={faTwitter}/></a>
+            <a href="https://telegram.com" target={"_blank"} rel={"noreferrer"}><FontAwesomeIcon icon={faTelegram}/></a>
+            <a href="https://www.instagram.com" target={"_blank"} rel={"noreferrer"}><FontAwesomeIcon icon={faInstagram}/></a>
         </div>
     );
 };

@@ -17,7 +17,6 @@ const getAll = createAsyncThunk<{ genres: IGenre[] }, void>(
     async (_, {rejectWithValue}) => {
         try {
             const {data} = await genreService.getAll();
-            console.log(data)
             return data;
         } catch (e) {
             const error = e as AxiosError;

@@ -7,6 +7,7 @@ import css from './Movies.module.css';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux";
 import {Movie} from "../Movie/Movie";
+import {MoviesByGenre} from "../MoviesByGenre/MoviesByGenre";
 
 const Movies: FC = () => {
 
@@ -32,6 +33,8 @@ const Movies: FC = () => {
                     !!movies && movies.map(movie => <Movie key={movie.id} movie={movie}/>)
                 }
             </div>
+
+            <MoviesByGenre/>
 
             <div className={css.MoviesButton}>
                 <button

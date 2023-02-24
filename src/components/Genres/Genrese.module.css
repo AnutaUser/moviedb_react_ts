@@ -5,6 +5,7 @@
     text-align: center;
     margin-right: 2%;
     box-sizing: border-box;
+    height: fit-content;
 }
 
 .Genres button {
@@ -16,4 +17,5 @@
     text-align: center;
     margin-left: 5%;
     margin-bottom: 3%;
+    cursor: pointer;
 }
