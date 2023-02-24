@@ -15,17 +15,8 @@ const Genre: FC<IProps> = ({genre}) => {
 
     const showGenreMovies = (id: string) => {
         localStorage.setItem('with_genres', JSON.stringify(id));
-        // const item = localStorage.getItem('with_genres');
-        // console.log(item);
         window.location.reload()
     };
-
-    // const dispatch = useAppDispatch();
-    // const navigate = useNavigate();
-    //
-    // const showGenreMovies = () => {
-    //     navigate(`/moviesByGenre?with_genres=${id}`);
-    // };
 
     return (
         <div>

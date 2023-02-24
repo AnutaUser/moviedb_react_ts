@@ -13,7 +13,7 @@ const movieService = {
 
     getVideo: (movieId: string): IRes<IVideo> => axiosService.get(endPoints.video(movieId)),
 
-    getByGenreId: (with_genres: number = 35): IRes<{ results: IMovie[] }> => axiosService.get(endPoints.movie, {params: {with_genres}}),
+    getByGenreId: (with_genres: number = 35, page: number = 1): IRes<{ results: IMovie[], page: number, }> => axiosService.get(endPoints.movie, {params: {with_genres, page}}),
 };
 
 export {

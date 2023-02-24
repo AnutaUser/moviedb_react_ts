@@ -29,11 +29,11 @@ const getALL = createAsyncThunk<{ page: number, results: IMovie[], total_pages: 
     }
 );
 
-const getByGenreId = createAsyncThunk<{ results: IMovie[] }, {with_genres: number} >(
+const getByGenreId = createAsyncThunk<{ results: IMovie[] }, {with_genres: number, page: number,} >(
     'movieSlice/getByGenreId',
-    async ({with_genres}, {rejectWithValue}) => {
+    async ({with_genres, page}, {rejectWithValue}) => {
         try {
-            const {data} = await movieService.getByGenreId(with_genres);
+            const {data} = await movieService.getByGenreId(with_genres, page);
             return data;
         } catch (e) {
             const error = e as AxiosError;
