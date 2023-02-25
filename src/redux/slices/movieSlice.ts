@@ -1,19 +1,21 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {AxiosError} from "axios";
 
-import {IMovie} from "../../interfaces";
+import {IMovie, IVideo} from "../../interfaces";
 import {movieService} from "../../api";
 
 interface IState {
     movies: IMovie[];
     page: number | null;
     total_pages: number | null;
+    videos: IVideo[];
 }
 
 const initialState: IState = {
     movies: [],
     page: null,
-    total_pages: null
+    total_pages: null,
+    videos: [],
 };
 
 const getALL = createAsyncThunk<{ page: number, results: IMovie[], total_pages: number }, { page: number }>(
@@ -29,11 +31,38 @@ const getALL = createAsyncThunk<{ page: number, results: IMovie[], total_pages: 
     }
 );
 
-const getByGenreId = createAsyncThunk<{ results: IMovie[] }, {with_genres: number, page: number,} >(
+const getByGenreId = createAsyncThunk<{ results: IMovie[] }, { with_genres: number, page: number, }>(
     'movieSlice/getByGenreId',
     async ({with_genres, page}, {rejectWithValue}) => {
         try {
             const {data} = await movieService.getByGenreId(with_genres, page);
+            return data;
+        } catch (e) {
+            const error = e as AxiosError;
+            return rejectWithValue(error.response?.data);
+        }
+    }
+);
+
+// const getVideo = createAsyncThunk<{ results: IVideo[] }, { movie_id: string }>(
+//     'movieSlice/getVideo',
+//     async ({movie_id}, {rejectWithValue}) => {
+//         try {
+//             const {data} = await movieService.getVideos(movie_id);
+//             // console.log(data);
+//             return data;
+//         } catch (e) {
+//             const error = e as AxiosError;
+//             return rejectWithValue(error.response?.data);
+//         }
+//     }
+// );
+
+const getSearchMovies = createAsyncThunk<{ page: number, results: IMovie[] }, { query: string, page: number }>(
+    'movieSlice/getSearchMovies',
+    async ({query, page}, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getSearchMovies(query, page);
             return data;
         } catch (e) {
             const error = e as AxiosError;
@@ -57,6 +86,12 @@ const movieSlice = createSlice({
             .addCase(getByGenreId.fulfilled, (state, action) => {
                 state.movies = action.payload.results;
             })
+            // .addCase(getVideo.fulfilled, (state, action) => {
+            //     state.videos = action.payload.results;
+            // })
+            .addCase(getSearchMovies.fulfilled, (state, action) => {
+                state.movies = action.payload.results;
+            })
 });
 
 const {reducer: movieReducer} = movieSlice;
@@ -64,6 +99,7 @@ const {reducer: movieReducer} = movieSlice;
 const movieActions = {
     getALL,
     getByGenreId,
+    getSearchMovies,
 };
 
 export {

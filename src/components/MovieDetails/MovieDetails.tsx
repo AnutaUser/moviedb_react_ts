@@ -4,6 +4,7 @@ import css from './MovieDetails.module.css';
 import {IMovie} from "../../interfaces";
 import {Badges} from "../Badges/Badges";
 
+
 interface IProps {
     movie: IMovie;
     children?: ReactNode;
@@ -24,7 +25,6 @@ const MovieDetails: FC<IProps> = ({movie}) => {
         vote_count,
         overview
     } = movie;
-    console.log(movie)
 
     return (
         <div className={css.MovieDetails}>{

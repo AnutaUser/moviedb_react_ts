@@ -6,8 +6,8 @@ const endPoints = {
     movie: '/discover/movie',
     movieById: (id: string): string => `/discover/movie/${id}`,
     genre: '/genre/movie/list',
-    video: (movieId: string): string => `/movie/${movieId}/videos`,
-    searchMovies: `/search/movie`,
+    videos: (movie_id: string) => `/movie/${movie_id}/videos`,
+    searchMovies: '/search/movie',
 
 };
 

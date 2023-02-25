@@ -1,9 +1,9 @@
 import React, {FC, ReactNode} from "react";
+import {useNavigate} from "react-router-dom";
 import ReactStars from "react-stars";
 
 import css from "./Movie.module.css";
 import {IMovie} from "../../interfaces";
-import {useNavigate} from "react-router-dom";
 
 interface IProps {
     movie: IMovie;
@@ -11,6 +11,7 @@ interface IProps {
 }
 
 const Movie: FC<IProps> = ({movie}) => {
+
     const {id, original_title, poster_path, vote_average} = movie;
 
     const navigate = useNavigate();
