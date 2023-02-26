@@ -8,6 +8,11 @@
     height: fit-content;
 }
 
+.Genres[id='dark'] {
+    background: gray;
+    color: #FFDB4C;
+}
+
 .Genres button {
     background: #202328;
     color: azure;
@@ -18,4 +23,9 @@
     margin-left: 5%;
     margin-bottom: 3%;
     cursor: pointer;
+}
+
+.Genres[id='dark'] button {
+    background: #cccccc;
+    color: #202328;
 }

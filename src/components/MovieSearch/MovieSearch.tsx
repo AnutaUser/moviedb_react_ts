@@ -1,4 +1,4 @@
-import React, {FC, useState} from "react";
+import React, {FC, useContext, useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {SubmitHandler, useForm} from "react-hook-form";
@@ -9,8 +9,11 @@ import {IMovie} from "../../interfaces";
 import {movieActions} from "../../redux";
 import {useSearchParams} from "react-router-dom";
 import {Movie} from "../Movie/Movie";
+import {ThemeContext} from "../../hoc";
 
 const MovieSearch: FC = () => {
+
+    const {theme} = useContext(ThemeContext);
 
     const {register, handleSubmit} = useForm<String>();
     const {movies} = useAppSelector(state => state.movieReducer);
@@ -32,7 +35,7 @@ const MovieSearch: FC = () => {
         };
 
     return (
-        <div className={css.MovieSearch}>
+        <div className={css.MovieSearch} id={theme}>
             {
                 isSearched && movies.map(movie => <Movie key={movie.id} movie={movie}/>)
             }

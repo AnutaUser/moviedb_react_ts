@@ -1,12 +1,15 @@
-import React, {FC} from "react";
+import React, {FC, useContext} from "react";
 import {NavLink} from "react-router-dom";
 
 import css from './Header.module.css';
+import {ThemeContext} from "../../hoc";
 
 const Header: FC = () => {
 
+    const {theme} = useContext(ThemeContext);
+
     return (
-        <div className={css.Header}>
+        <div className={css.Header} id={theme}>
             <div className={css.HeaderNav}>
                 <NavLink to={'/'}>HOME</NavLink>
                 <NavLink to={'/movie'}>MOVIES</NavLink>

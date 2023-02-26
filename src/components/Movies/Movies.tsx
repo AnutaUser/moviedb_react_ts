@@ -1,4 +1,4 @@
-import React, {FC, useEffect} from "react";
+import React, {FC, useContext, useEffect} from "react";
 import {useSearchParams} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
@@ -8,8 +8,11 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux";
 import {Movie} from "../Movie/Movie";
 import {MoviesByGenre} from "../MoviesByGenre/MoviesByGenre";
+import {ThemeContext} from "../../hoc";
 
 const Movies: FC = () => {
+
+    const {theme} = useContext(ThemeContext);
 
     const dispatch = useAppDispatch();
     const {movies, page, total_pages} = useAppSelector(state => state.movieReducer);
@@ -27,7 +30,7 @@ const Movies: FC = () => {
     };
 
     return (
-        <div>
+        <div id={theme}>
             <div className={css.Movies}>
                 {
                     !!movies && movies.map(movie => <Movie key={movie.id} movie={movie}/>)
@@ -41,14 +44,14 @@ const Movies: FC = () => {
                     disabled={page === 1}
                     onClick={() => prev()}
                 >
-                    <FontAwesomeIcon icon={faArrowLeft} className={css.icon}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faArrowLeft} className={css.Icon}></FontAwesomeIcon>
                 </button>
 
                 <button
                     disabled={page === total_pages}
                     onClick={() => next()}
                 >
-                    <FontAwesomeIcon icon={faArrowRight} className={css.icon}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faArrowRight} className={css.Icon}></FontAwesomeIcon>
                 </button>
             </div>
 

@@ -5,10 +5,18 @@
     padding: 1vw;
 }
 
+.MovieDetails[id='dark'] {
+    background: gray;
+}
+
 .MovieDetailsTitle {
     font-size: 3vw;
     margin-top: 0;
     margin-bottom: 2%;
+}
+
+.MovieDetails[id='dark'] h2 {
+    color: #FFDB4C;
 }
 
 .MovieDetailsInfo {
@@ -26,4 +34,24 @@
 .MovieDetailsDescription p {
     font-size: 1.5vw;
     text-align: justify;
+}
+
+.MovieDetailsBtnBlock {
+    width: 100%;
+    text-align: center;
+}
+
+.MovieDetails  button{
+    background: #202328;
+    color: azure;
+    font-size: 2vw;
+    border: none;
+    width: 7vw;
+    height: 3vw;
+    cursor: pointer;
+}
+
+.MovieDetails[id='dark'] button{
+    background: #FFDB4C;
+    color: #202328;
 }

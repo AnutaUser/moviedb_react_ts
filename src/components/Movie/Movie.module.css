@@ -1,4 +1,4 @@
-.Movie{
+.Movie {
     width: 23%;
 }
 
@@ -8,6 +8,10 @@
     color: azure;
     border: none;
     padding: 3%;
+}
+
+.Movie[id='dark'] button {
+    background: gray;
 }
 
 .MoviePoster {

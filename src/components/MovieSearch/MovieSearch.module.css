@@ -1,4 +1,4 @@
-.MovieSearch{
+.MovieSearch {
     width: 100%;
     background: #2A2D34;
     height: 5vw;
@@ -6,6 +6,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+}
+
+.MovieSearch[id='dark'] {
+    background: gray;
 }
 
 .MovieSearch input {
@@ -16,10 +20,18 @@
     width: 40vw;
 }
 
+.MovieSearch[id='dark'] input {
+    background: #cccccc;
+}
+
 .MovieSearch button {
     background: #202328;
     color: azure;
     border: none;
     height: 3.2vw;
+}
 
+.MovieSearch[id='dark'] button {
+    background: #cccccc;
+    color: #2A2D34;
 }

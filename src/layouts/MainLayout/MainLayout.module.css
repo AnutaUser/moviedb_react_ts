@@ -1,5 +1,14 @@
-.MainLayout {
+.MainLayoutLight {
     background-image: url("../../components/backgroundImages/bg.jpg");
+    background-attachment: scroll;
+    background-repeat: repeat;
+    padding-top: 13%;
+    padding-left: 13%;
+    box-sizing: border-box;
+}
+
+.MainLayoutDark {
+    background-image: url("../../components/backgroundImages/white-background.jpg");
     background-attachment: scroll;
     background-repeat: repeat;
     padding-top: 13%;
@@ -11,4 +20,20 @@
     width: 84%;
     background: #202328;
     box-shadow: 0 0 20px rgb(0 0 0 / 80%)
+}
+
+.MainLayoutChildrenDark {
+    width: 84%;
+    background: #cccccc;
+    box-shadow: 0 0 40px rgb(0 0 0 / 50%);
+}
+
+.MainLayoutSwitcher {
+    background: none;
+    border: none;
+    color: azure;
+    cursor: pointer;
+    position: relative;
+    bottom: -4vw;
+    left: 2vw;
 }

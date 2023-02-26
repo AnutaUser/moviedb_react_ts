@@ -1,9 +1,9 @@
-import React, {FC, ReactNode} from "react";
+import React, {FC, ReactNode, useContext} from "react";
 
 import css from './MovieDetails.module.css';
 import {IMovie} from "../../interfaces";
 import {Badges} from "../Badges/Badges";
-
+import {ThemeContext} from "../../hoc";
 
 interface IProps {
     movie: IMovie;
@@ -11,6 +11,8 @@ interface IProps {
 }
 
 const MovieDetails: FC<IProps> = ({movie}) => {
+
+    const {theme} = useContext(ThemeContext);
 
     const {
         original_title,
@@ -27,10 +29,11 @@ const MovieDetails: FC<IProps> = ({movie}) => {
     } = movie;
 
     return (
-        <div className={css.MovieDetails}>{
+        <div className={css.MovieDetails} id={theme}>{
             !!movie &&
 
             <div>
+
                 <div>
                     <h2 className={css.MovieDetailsTitle}>{title}</h2>
                     <div className={css.MovieDetailsInfoBadges}>
@@ -64,8 +67,11 @@ const MovieDetails: FC<IProps> = ({movie}) => {
                     <p>{overview}</p>
                 </div>
 
-            </div>
+                <div className={css.MovieDetailsBtnBlock}>
+                    <button onClick={() => window.history.back()}>back</button>
+                </div>
 
+            </div>
         }</div>
     );
 };

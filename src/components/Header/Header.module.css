@@ -9,6 +9,9 @@
     align-items: center;
     box-sizing: border-box;
 }
+.Header[id='dark']{
+    background: gray;
+}
 
 .Header a {
     text-decoration: none;
