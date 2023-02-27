@@ -1,10 +1,14 @@
-import React, {FC} from "react";
+import React, {FC, useContext} from "react";
 
-const HomePage:FC = () => {
+import css from './HomePage.module.css';
+import {ThemeContext} from "../../hoc";
+
+const HomePage: FC = () => {
+
+    const {theme} = useContext(ThemeContext);
 
     return (
-        <div>
-            HomePage:FC
+        <div className={css.HomePage} id={theme}>
         </div>
     );
 };

@@ -6,7 +6,6 @@ const NotFoundPage:FC = () => {
 
     return (
         <div className={css.NotFoundPage}>
-NotFoundPage
         </div>
     );
 };

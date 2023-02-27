@@ -2,14 +2,14 @@ import React, {FC, useContext, useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {SubmitHandler, useForm} from "react-hook-form";
+import {useSearchParams} from "react-router-dom";
 
 import css from './MovieSearch.module.css';
-import {useAppDispatch, useAppSelector} from "../../hooks";
 import {IMovie} from "../../interfaces";
-import {movieActions} from "../../redux";
-import {useSearchParams} from "react-router-dom";
 import {Movie} from "../Movie/Movie";
+import {movieActions} from "../../redux";
 import {ThemeContext} from "../../hoc";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 
 const MovieSearch: FC = () => {
 
@@ -21,14 +21,14 @@ const MovieSearch: FC = () => {
     const [isSearched, setIsSearched] = useState(false);
     const [query] = useSearchParams({page: '1'});
 
-        const findMovie: SubmitHandler<String> = (movieName): IMovie | IMovie[] | null => {
+        const findMovies: SubmitHandler<String> = (movieName): IMovie | IMovie[] | null => {
+
             if (!isSearched) {
                 setIsSearched(true);
                 setTimeout(() => {
                     setIsSearched(false);
                 }, 1000);
             }
-            console.log(movieName);
 
             dispatch(movieActions.getSearchMovies({query: movieName.toString(), page: +query.get('page')!}));
             return movies;
@@ -39,7 +39,7 @@ const MovieSearch: FC = () => {
             {
                 isSearched && movies.map(movie => <Movie key={movie.id} movie={movie}/>)
             }
-            <form onSubmit={handleSubmit(findMovie)}>
+            <form onSubmit={handleSubmit(findMovies)}>
                 <input type="text" {...register('search')}/>
                 <button>
                     <FontAwesomeIcon icon={faSearch}/>

@@ -1,1 +1,11 @@
-.HomePage{}
+.HomePage {
+    background-image: url("../../components/backgroundImages/Welcome_HDVHZA.jpg");
+    width: 100%;
+    height: 38vw;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.HomePage[id='dark'] {
+    background-image: url("../../components/backgroundImages/3214397.jpg");
+}
